@@ -72,8 +72,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$HP3$2f$HP3$2f$n
 ;
 ;
 const metadata = {
-    title: 'v0 App',
-    description: 'Created with v0',
+    title: 'はしるアルパカ | App Dev Circle',
+    description: '未来のアプリ開発者を育成するアプリ開発サークル',
     generator: 'v0.app',
     icons: {
         icon: [
