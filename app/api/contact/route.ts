@@ -1,9 +1,9 @@
-
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/db";
 import { z } from "zod";
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
+
 
 const formSchema = z.object({
     name: z.string().min(2),
