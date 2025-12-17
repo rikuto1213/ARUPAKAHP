@@ -1,13 +1,6 @@
-[00:00:02.718] Server  LOG      ✓ Ready in 1715ms
-[00:00:08.626] Server  LOG      ○ Compiling / ...
-[00:00:11.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:11.416] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:11.416] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:11.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765955833150}
-[00:15:30.886] Server  LOG      ✓ Compiled in 287ms
-[00:15:33.502] Server  LOG      ✓ Compiled in 268ms
-[00:15:49.521] Server  LOG      ✓ Compiled in 465ms
-[00:15:51.774] Server  LOG      ✓ Compiled in 125ms
-[00:19:33.234] Server  LOG        Reload env: .env
-[00:20:29.232] Server  LOG        Reload env: .env
-[00:26:43.599] Server  LOG      ✓ Compiled in 155ms
+[00:00:02.894] Server  LOG      ✓ Ready in 1857ms
+[00:00:07.248] Server  LOG      ○ Compiling / ...
+[00:00:10.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.358] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:10.358] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:10.358] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765959056981}
