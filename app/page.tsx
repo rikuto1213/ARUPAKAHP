@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero-section"
 import NewsSection from "@/components/news-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
