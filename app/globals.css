@@ -1,0 +1,192 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Changed to warm orange/peach color palette */
+  --orange-primary: #fb923c;
+  --peach-primary: #fdba74;
+  --coral-accent: #f97316;
+  --warm-accent: #fbbf24;
+
+  /* Design Tokens */
+  --background: #fffbf5;
+  --foreground: #292524;
+  --card: #ffffff;
+  --card-foreground: #292524;
+  --popover: #ffffff;
+  --popover-foreground: #292524;
+  --primary: #fb923c;
+  --primary-foreground: #ffffff;
+  --secondary: #fdba74;
+  --secondary-foreground: #292524;
+  --muted: #fef3e2;
+  --muted-foreground: #78716c;
+  --accent: #f97316;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #fed7aa;
+  --input: #fef3e2;
+  --ring: #fb923c;
+  --chart-1: #fb923c;
+  --chart-2: #fdba74;
+  --chart-3: #f97316;
+  --chart-4: #fbbf24;
+  --chart-5: #fcd34d;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #292524;
+  --sidebar-primary: #fb923c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fdba74;
+  --sidebar-accent-foreground: #292524;
+  --sidebar-border: #fed7aa;
+  --sidebar-ring: #fb923c;
+}
+
+.dark {
+  --background: #292524;
+  --foreground: #fef3e2;
+  --card: #44403c;
+  --card-foreground: #fef3e2;
+  --popover: #44403c;
+  --popover-foreground: #fef3e2;
+  --primary: #fb923c;
+  --primary-foreground: #292524;
+  --secondary: #fdba74;
+  --secondary-foreground: #292524;
+  --muted: #57534e;
+  --muted-foreground: #a8a29e;
+  --accent: #f97316;
+  --accent-foreground: #292524;
+  --destructive: #ef4444;
+  --destructive-foreground: #fecaca;
+  --border: #57534e;
+  --input: #44403c;
+  --ring: #fb923c;
+  --chart-1: #fb923c;
+  --chart-2: #fdba74;
+  --chart-3: #f97316;
+  --chart-4: #fbbf24;
+  --chart-5: #fcd34d;
+  --sidebar: #44403c;
+  --sidebar-foreground: #fef3e2;
+  --sidebar-primary: #fb923c;
+  --sidebar-primary-foreground: #292524;
+  --sidebar-accent: #fdba74;
+  --sidebar-accent-foreground: #292524;
+  --sidebar-border: #57534e;
+  --sidebar-ring: #fb923c;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom fade-up animation for scroll effects */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Added alpaca floating animation with different speeds */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes floatMedium {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(-5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 4s ease-in-out infinite;
+}
