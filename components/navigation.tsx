@@ -20,16 +20,19 @@ export default function Navigation() {
               ホーム
             </a>
             <a href="#about" className="text-sm font-medium text-slate-900 hover:text-pink-600">
-              メッセージ
+              About us
             </a>
-            <a href="#feature" className="text-sm font-medium text-slate-900 hover:text-pink-600">
-              機能
-            </a>
-            <a href="#projects" className="text-sm font-medium text-slate-900 hover:text-pink-600">
-              プロジェクト
+            <a href="/achievements" className="text-sm font-medium text-slate-900 hover:text-pink-600">
+              実績
             </a>
             <a href="#members" className="text-sm font-medium text-slate-900 hover:text-pink-600">
-              メンバー
+              メンバー紹介
+            </a>
+            <a href="#join" className="text-sm font-medium text-slate-900 hover:text-pink-600">
+              入部希望者向け
+            </a>
+             <a href="#corporate" className="text-sm font-medium text-slate-900 hover:text-pink-600">
+              企業向け
             </a>
           </div>
 
