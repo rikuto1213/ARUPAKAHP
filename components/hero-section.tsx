@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useFadeUp } from "@/hooks/use-fade-up";
 
 export default function HeroSection() {
@@ -68,12 +69,14 @@ export default function HeroSection() {
             <div className="absolute bottom-20 left-1/2 w-40 h-40 bg-gradient-to-tr from-pink-200 to-purple-200 rounded-full blur-3xl opacity-40"></div>
 
             {/* Image placeholder - User will provide their own */}
-            <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center border-2 border-dashed border-slate-300">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🖼️</div>
-                <p className="text-slate-500">画像を配置してください</p>
-              </div>
-            </div>
+            <Image
+              src="/images/S__46784564.jpg"
+              alt="Album cover"
+              width={600}
+              height={600}
+              className="w-full h-full object-contain rounded-3xl"
+              priority
+            />
           </div>
         </div>
       </div>
