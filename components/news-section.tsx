@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useFadeUp } from "@/hooks/use-fade-up";
 
 export default function NewsSection() {
