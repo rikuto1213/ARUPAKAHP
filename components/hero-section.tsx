@@ -147,7 +147,7 @@ export default function HeroSection() {
         y: mouse.y,
         xv: type ? 18 * Math.random() - 9 : 24 * Math.random() - 12,
         yv: type ? 18 * Math.random() - 9 : 24 * Math.random() - 12,
-        c: type ? "rgba(110,223,243,0.45)" : "rgba(239,158,78,0.42)",
+        c: type ? "rgba(110,223,243,0.45)" : "rgba(140,205,255,0.38)",
         s: type ? 4 + 8 * Math.random() : 3 + 6 * Math.random(),
         a: 1,
       });
