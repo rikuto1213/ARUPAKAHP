@@ -44,17 +44,22 @@ export default function MembersPage() {
           className="mb-12 bg-pink-50 border-l-4 border-pink-400 p-6 rounded shadow"
         >
           <h2 className="text-2xl font-bold mb-4 text-pink-600">
-            代表
+            三役
           </h2>
 
           <p className="mb-2 text-slate-800 text-lg">
-            <span className="font-bold">会長：</span>
+            <span className="font-bold">代表：</span>
             林 泰聖（理工学部 電子情報工学科）
           </p>
 
-          <p className="text-slate-800 text-lg">
-            <span className="font-bold">副会長：</span>
+          <p className="mb-2 text-slate-800 text-lg">
+            <span className="font-bold">副代表：</span>
             小林 海空斗（理工学部 電気電子工学科）
+          </p>
+          
+          <p className="mb-2 text-slate-800 text-lg">
+            <span className="font-bold">会計：</span>
+            西田朱里（理工学部 数理学科データサイエンス専攻）
           </p>
         </motion.section>
 
