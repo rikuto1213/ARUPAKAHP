@@ -15,7 +15,7 @@ export default function Navigation() {
             </Link>
 
             <a
-              href="#about"
+              href="/aboutus"
               className="text-sm font-medium text-slate-900 hover:text-pink-600"
             >
               About us

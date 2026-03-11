@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 type Achievement = {
   tag: "APP" | "EVENT" | "EDUCATION";
@@ -25,7 +26,7 @@ const achievements: Achievement[] = [
     highlight: "ダウンロード数 700以上",
     description:
       "サークルで企画・開発したアプリで、累計700ダウンロードを達成しました。ユーザーの声を元にアップデートを重ね、より使いやすいアプリへ改善を行いました。",
-    buttonText: "ダウンロードへ",
+    buttonText: "リリース予定",
     buttonColor: "bg-pink-500 hover:bg-pink-600",
     image: "/images/arukuArupaka.png",
     link: "#",
@@ -37,7 +38,7 @@ const achievements: Achievement[] = [
     highlight: "ダウンロード数 100以上",
     description:
       "学生生活を支援することを目的に制作したアプリで、累計100ダウンロードを突破しました。企画から開発、公開までを一貫して行いました。",
-    buttonText: "ダウンロードへ",
+    buttonText: "リリース予定",
     buttonColor: "bg-sky-500 hover:bg-sky-600",
     image: "/images/rituhure.png",
     link: "#",
@@ -81,7 +82,14 @@ export default function AchievementsPage(): React.ReactElement {
       <div className="relative mx-auto max-w-6xl px-6 py-20">
         {/* タイトル */}
         <header className="text-center">
-          <h1 className="text-5xl font-bold tracking-tight">実績</h1>
+          <motion.h1
+initial={{ opacity: 0, y: -30 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6 }}
+className="text-5xl font-bold tracking-tight"
+>
+実績
+</motion.h1>
           <p className="mt-2 text-lg text-gray-600">Achievements</p>
           <p className="mt-6 text-gray-500">
             これまでに制作したアプリや活動を紹介します。
@@ -89,52 +97,63 @@ export default function AchievementsPage(): React.ReactElement {
         </header>
 
         {/* 実績カード */}
-        <section className="mt-16 grid gap-8 md:grid-cols-2">
-          {achievements.map((item: Achievement, index: number) => (
-            <article
-            key={index}
-             className="flex flex-col rounded-3xl border border-white/50 bg-white/60 p-8 shadow-lg backdrop-blur-md transition hover:scale-[1.02]"
->
-              <div className="flex items-start justify-between">
-                <span
-                  className={`inline-block rounded-full px-4 py-1 text-sm font-semibold text-white ${item.tagColor}`}
-                >
-                  {item.tag}
-                </span>
+<section className="mt-16 grid gap-8 md:grid-cols-2">
+  {achievements.map((item: Achievement, index: number) => (
+    <motion.article
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      // hover時の動きをFramer Motionで制御
+      whileHover={{ 
+        y: -8,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1, 
+        ease: "easeOut" 
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="flex flex-col h-full rounded-3xl border border-white/50 bg-white/60 p-8 shadow-lg backdrop-blur-md"
+    >
+      <div className="flex items-start justify-between">
+        <span className={`inline-block rounded-full px-4 py-1 text-sm font-semibold text-white ${item.tagColor}`}>
+          {item.tag}
+        </span>
 
-                {/* アイコン画像 */}
-                <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-white shadow">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+        {/* アイコン画像 */}
+        <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
 
-              <h2 className="mt-6 text-2xl font-bold">{item.title}</h2>
-              <p className="mt-2 text-lg font-semibold text-gray-800">
-                {item.highlight}
-              </p>
+      <div className="flex flex-col flex-grow">
+        <h2 className="mt-6 text-2xl font-bold">{item.title}</h2>
+        <p className="mt-2 text-lg font-semibold text-gray-800">
+          {item.highlight}
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-gray-600">
+          {item.description}
+        </p>
+      </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-gray-600 flex-grow">
-             {item.description}
-               </p>
-
-              <div className="mt-6 flex justify-end">
-                <Link
-                  href={item.link}
-                  
-                  className={`flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md transition ${item.buttonColor}`}
-                >
-                  {item.buttonText}
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            </article>
-          ))}
-        </section>
+      <div className="mt-8 flex justify-end">
+        <Link
+          href={item.link}
+          className={`flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md transition-all active:scale-95 ${item.buttonColor}`}
+        >
+          {item.buttonText}
+          <ArrowRight size={18} />
+        </Link>
+      </div>
+    </motion.article>
+  ))}
+</section>
 
         {/* Upcoming */}
         <section className="mt-20">
