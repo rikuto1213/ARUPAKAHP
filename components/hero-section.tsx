@@ -34,7 +34,7 @@ type Particle = {
 const ITEMS: ItemDef[] = [
   { id: "c", src: "/images/c.svg", alt: "C", left: "8%", top: "16%", mobileLeft: "9%", mobileTop: "21%", exitX: -260, exitY: -220, rotate: -10, size: 94, mobileSize: 76 },
   { id: "figma", src: "/images/figma.svg", alt: "Figma", right: "6%", top: "16%", mobileRight: "8%", mobileTop: "21%", exitX: 280, exitY: -220, rotate: 11, size: 92, mobileSize: 70 },
-  { id: "react", src: "/images/react.svg", alt: "React", left: "62%", top: "18%", mobileLeft: "24%", mobileTop: "25%", exitX: 240, exitY: -200, rotate: 6, size: 92, mobileSize: 68 },
+  { id: "react", src: "/images/react.svg", alt: "React", left: "62%", top: "18%", mobileLeft: "62%", mobileTop: "25%", exitX: 240, exitY: -200, rotate: 6, size: 92, mobileSize: 68 },
   { id: "python", src: "/images/python.svg", alt: "Python", left: "8%", top: "66%", mobileLeft: "8%", mobileTop: "72%", exitX: -300, exitY: 190, rotate: -8, size: 116, mobileSize: 88 },
   { id: "next", src: "/images/next.svg", alt: "Next.js", right: "7%", top: "68%", mobileRight: "8%", mobileTop: "73%", exitX: 300, exitY: 220, rotate: 8, size: 98, mobileSize: 78 },
   { id: "typescript", src: "/images/typescript.svg", alt: "TypeScript", left: "12%", top: "40%", mobileLeft: "7%", mobileTop: "45%", exitX: -220, exitY: -60, rotate: 7, size: 108, mobileSize: 84 },
