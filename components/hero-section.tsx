@@ -306,7 +306,7 @@ export default function HeroSection() {
         <div className="relative z-10 -mt-[5vh] flex flex-col items-center text-center">
           <h1 className="translate-x-[0.18em] font-black leading-[0.9] tracking-tight">
             <span
-              className="font-mono text-[clamp(1.8rem,5.6vw,5rem)]"
+              className="font-mono text-[clamp(2.1rem,6.6vw,6.1rem)]"
               style={{
                 color: TYPE_COLORS[typedColorIndex],
                 textShadow:
@@ -318,7 +318,7 @@ export default function HeroSection() {
               {typedText}
             </span>
             <span
-              className={`ml-1 inline-block font-mono text-[clamp(1.8rem,5.6vw,5rem)] text-slate-900 ${
+              className={`ml-1 inline-block font-mono text-[clamp(2.1rem,6.6vw,6.1rem)] text-slate-900 ${
                 showUnderscore ? "opacity-100" : "opacity-0"
               }`}
             >
