@@ -356,9 +356,15 @@ export default function HeroSection() {
               {TAB_ITEMS.map((item) => (
                 <div
                   key={`grid-${item.id}`}
-                  className="flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-gray-100 bg-white p-3"
+                  className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-gray-100 bg-white p-3 transition-shadow duration-200 hover:shadow-md"
                 >
-                  <Image src={item.src} alt={item.alt} width={44} height={44} />
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={44}
+                    height={44}
+                    className="transition-transform duration-200 group-hover:scale-125"
+                  />
                   <span className="text-xs font-medium text-gray-600">{item.alt}</span>
                 </div>
               ))}
