@@ -328,7 +328,9 @@ export default function HeroSection() {
                 textShadow:
                   typedColorIndex === 0
                     ? "0 2px 10px rgba(17,24,39,0.2)"
-                    : "0 2px 8px rgba(249,115,22,0.18)",
+                    : typedColorIndex === 1
+                      ? "0 2px 10px rgba(102,51,153,0.34)"
+                      : "0 2px 10px rgba(173,216,230,0.45)",
               }}
             >
               {typedText}
