@@ -41,6 +41,9 @@ const ITEMS: ItemDef[] = [
   { id: "git", src: "/images/git.svg", alt: "Git", left: "47%", top: "87%", mobileLeft: "50%", mobileTop: "90%", exitX: 0, exitY: 260, rotate: 0, size: 120, mobileSize: 92 },
 ];
 
+const TYPE_WORDS = ["はしるアルパカ", "Learn Together.", "Build Apps."];
+const TYPE_COLORS = ["#111827", "#ef9e4e", "#f97316"];
+
 function FloatingItem({
   item,
   scrollYProgress,
@@ -81,6 +84,9 @@ export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [typedColorIndex, setTypedColorIndex] = useState(0);
+  const [showUnderscore, setShowUnderscore] = useState(true);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -97,6 +103,57 @@ export default function HeroSection() {
     window.addEventListener("resize", updateViewport);
     return () => {
       window.removeEventListener("resize", updateViewport);
+    };
+  }, []);
+
+  useEffect(() => {
+    let visible = true;
+    let letterCount = 1;
+    let direction = 1;
+    let waiting = false;
+    let wordIndex = 0;
+    let colorIndex = 0;
+    const timeoutIds: number[] = [];
+
+    setTypedText(TYPE_WORDS[0].substring(0, 1));
+    setTypedColorIndex(0);
+
+    const typingId = window.setInterval(() => {
+      if (letterCount === 0 && waiting === false) {
+        waiting = true;
+        setTypedText("");
+        const timeoutId = window.setTimeout(() => {
+          colorIndex = (colorIndex + 1) % TYPE_COLORS.length;
+          wordIndex = (wordIndex + 1) % TYPE_WORDS.length;
+          direction = 1;
+          setTypedColorIndex(colorIndex);
+          letterCount += direction;
+          waiting = false;
+        }, 1000);
+        timeoutIds.push(timeoutId);
+      } else if (letterCount === TYPE_WORDS[wordIndex].length + 1 && waiting === false) {
+        waiting = true;
+        const timeoutId = window.setTimeout(() => {
+          direction = -1;
+          letterCount += direction;
+          waiting = false;
+        }, 1000);
+        timeoutIds.push(timeoutId);
+      } else if (waiting === false) {
+        setTypedText(TYPE_WORDS[wordIndex].substring(0, letterCount));
+        letterCount += direction;
+      }
+    }, 120);
+
+    const blinkId = window.setInterval(() => {
+      visible = !visible;
+      setShowUnderscore(visible);
+    }, 400);
+
+    return () => {
+      window.clearInterval(typingId);
+      window.clearInterval(blinkId);
+      timeoutIds.forEach((id) => window.clearTimeout(id));
     };
   }, []);
 
@@ -247,8 +304,28 @@ export default function HeroSection() {
         </div>
 
         <div className="relative z-10 -mt-[5vh] flex flex-col items-center text-center">
-          <h1 className="text-[clamp(3rem,9vw,8rem)] font-black leading-[0.9] tracking-tighter text-gray-900">はしるアルパカ</h1>
-          <p className="mt-8 max-w-lg text-base leading-relaxed text-gray-500 md:text-lg">
+          <h1 className="translate-x-[0.18em] font-black leading-[0.9] tracking-tight">
+            <span
+              className="font-mono text-[clamp(1.8rem,5.6vw,5rem)]"
+              style={{
+                color: TYPE_COLORS[typedColorIndex],
+                textShadow:
+                  typedColorIndex === 0
+                    ? "0 2px 10px rgba(17,24,39,0.2)"
+                    : "0 2px 8px rgba(249,115,22,0.18)",
+              }}
+            >
+              {typedText}
+            </span>
+            <span
+              className={`ml-1 inline-block font-mono text-[clamp(1.8rem,5.6vw,5rem)] text-slate-900 ${
+                showUnderscore ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              _
+            </span>
+          </h1>
+          <p className="mt-8 max-w-md text-base leading-relaxed text-gray-500 md:text-lg">
             つくりたいを、カタチに。
             <br />
             ここは、学生がアプリをつくる場所。
