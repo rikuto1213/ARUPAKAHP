@@ -55,29 +55,6 @@ export default function HeroSection() {
               <p>一緒に最高のアプリを作りましょう。</p>
             </div>
           </div>
-
-          {/* Right Content - Image placeholder */}
-          <div
-            ref={imageRef}
-            className={`relative h-[500px] lg:h-[600px] flex items-center justify-center transition-all duration-1000 transform ${imageVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-              }`}
-          >
-            {/* Decorative shapes */}
-            <div className="absolute top-20 right-0 w-48 h-48 bg-gradient-to-bl from-cyan-300 to-blue-200 rounded-3xl blur-2xl opacity-30"></div>
-            <div className="absolute bottom-20 left-1/2 w-40 h-40 bg-gradient-to-tr from-pink-200 to-purple-200 rounded-full blur-3xl opacity-40"></div>
-
-            {/* Image placeholder - User will provide their own */}
-            <Image
-              src="/images/S__46784564.jpg"
-              alt="Album cover"
-              width={600}
-              height={600}
-              className="w-full h-full object-contain rounded-3xl"
-              priority
-            />
-          </div>
         </div>
       </div>
 

@@ -1,11 +1,4 @@
-
 /*
-    Contact API temporarily disabled for deployment.
-    Original implementation (DB writes via Prisma) is commented out below.
-
-    If you want to re-enable, restore the implementation and ensure
-    `DATABASE_URL` is set and migrations applied.
-
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
@@ -50,7 +43,6 @@ export async function POST(req: Request) {
 
 import { NextResponse } from "next/server";
 
-// Fallback handler: returns 503 to indicate API is disabled for deployment.
 export async function POST(req: Request) {
     return NextResponse.json(
         { message: "Contact API is temporarily disabled for deployment" },
