@@ -48,7 +48,7 @@ const TAB_ITEMS = [...ITEMS].sort(
 );
 
 const TYPE_WORDS = ["はしるアルパカ", "Learn Together.", "Build Apps."];
-const TYPE_COLORS = ["#ffffff", "#F3A1FF", "lightblue"];
+const TYPE_COLORS = ["#777777", "#FFB868", "#68C0FF"];
 
 function FloatingItem({
   item,
@@ -203,23 +203,23 @@ export default function HeroSection() {
                 color: TYPE_COLORS[typedColorIndex],
                 textShadow:
                   typedColorIndex === 0
-                    ? "0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.34)"
+                    ? "0 2px 10px rgba(119,119,119,0.38), 0 0 20px rgba(119,119,119,0.24)"
                     : typedColorIndex === 1
-                      ? "0 2px 10px rgba(243,161,255,0.55), 0 0 20px rgba(184,94,212,0.35)"
-                      : "0 2px 10px rgba(173,216,230,0.6), 0 0 22px rgba(120,210,255,0.38)",
+                      ? "0 2px 10px rgba(255,184,104,0.52), 0 0 20px rgba(255,184,104,0.3)"
+                      : "0 2px 10px rgba(104,192,255,0.55), 0 0 22px rgba(104,192,255,0.34)",
               }}
             >
               {typedText}
             </span>
             <span
-              className={`ml-1 inline-block whitespace-nowrap font-mono text-[clamp(1.9rem,6.95vw,6.45rem)] text-white ${
+              className={`ml-1 inline-block whitespace-nowrap font-mono text-[clamp(1.9rem,6.95vw,6.45rem)] text-slate-700 ${
                 showUnderscore ? "opacity-100" : "opacity-0"
               }`}
             >
               _
             </span>
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-white md:text-lg">
+          <p className="mt-8 max-w-md text-base leading-relaxed text-gray-400 md:text-lg">
             つくりたいを、カタチに。
             <br />
             ここは、学生がアプリをつくる場所。
@@ -229,12 +229,12 @@ export default function HeroSection() {
 
       <section className="relative px-6 pb-28">
         <motion.div style={{ y: logoY, scale: logoScale }} className="relative z-10 mx-auto -mt-72 w-full max-w-5xl">
-          <div className="rounded-2xl border border-indigo-200/60 bg-indigo-50/85 p-8 shadow-[0_20px_50px_rgba(37,99,235,0.22)] backdrop-blur-sm">
+          <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-8 shadow-[0_22px_55px_rgba(15,23,42,0.12)] backdrop-blur-sm">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8 lg:gap-5">
               {TAB_ITEMS.map((item) => (
                 <div
                   key={`grid-${item.id}`}
-                  className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-indigo-200/70 bg-white/85 p-3 transition-all duration-200 hover:border-indigo-400 hover:bg-indigo-100"
+                  className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-slate-200/80 bg-white/95 p-3 shadow-[0_8px_22px_rgba(15,23,42,0.07)] transition-all duration-200 hover:border-slate-300 hover:bg-slate-50"
                 >
                   <Image
                     src={item.src}
@@ -243,7 +243,7 @@ export default function HeroSection() {
                     height={44}
                     className="transition-transform duration-200 group-hover:scale-125"
                   />
-                  <span className="text-xs font-medium text-slate-700 transition-colors duration-200 group-hover:text-indigo-900">
+                  <span className="text-xs font-medium text-slate-700 transition-colors duration-200 group-hover:text-slate-900">
                     {item.alt}
                   </span>
                 </div>
@@ -254,7 +254,7 @@ export default function HeroSection() {
       </section>
       <style jsx>{`
         .area {
-          background: linear-gradient(to left, #8f94fb, #4e54c8);
+          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 45%, #eef2ff 100%);
         }
 
         .circles {
@@ -269,7 +269,7 @@ export default function HeroSection() {
           list-style: none;
           width: 20px;
           height: 20px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(148, 163, 184, 0.18);
           animation: float-square 25s linear infinite;
           bottom: -150px;
         }
