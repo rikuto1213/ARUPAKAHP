@@ -70,12 +70,12 @@ export default function Footer() {
             <h4 className="font-semibold text-white">サポート</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white">
+                <a href="#contact" className="text-slate-400 hover:text-white">
                   お問い合わせ
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white">
+                <a href="/FAQ" className="text-slate-400 hover:text-white">
                   FAQ
                 </a>
               </li>

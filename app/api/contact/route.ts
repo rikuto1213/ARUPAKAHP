@@ -1,4 +1,4 @@
-
+/*
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
@@ -37,4 +37,15 @@ export async function POST(req: Request) {
             { status: 500 }
         );
     }
+}
+
+*/
+
+import { NextResponse } from "next/server";
+
+export async function POST(req: Request) {
+    return NextResponse.json(
+        { message: "Contact API is temporarily disabled for deployment" },
+        { status: 503 }
+    );
 }
