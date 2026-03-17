@@ -17,24 +17,30 @@ const fadeUp: Variants = {
 
 export default function MembersPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pt-32 pb-20 px-6">
+    <main className="min-h-screen bg-slate-50 pt-20 pb-20 px-6">
       <div className="max-w-3xl mx-auto">
 
         {/* タイトル */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl font-bold text-slate-900 text-center mb-4">
-            メンバー紹介
-          </h1>
+       {/* タイトル */}
+<header className="text-center mb-16">
+  <motion.h1
+    initial={{ opacity: 0, y: -30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-5xl font-bold tracking-tight text-slate-900"
+  >
+    メンバー紹介
+  </motion.h1>
 
-          <p className="text-center text-slate-600 mb-16">
-            はしるアルパカのメンバーを紹介します
-          </p>
-        </motion.div>
+  <p className="mt-2 text-lg text-gray-600">
+    Members
+  </p>
 
+  <p className="mt-6 text-gray-500">
+    はしるアルパカのメンバーを紹介します。
+  </p>
+</header>
+        
         {/* 代表 */}
         <motion.section
           variants={fadeUp}
