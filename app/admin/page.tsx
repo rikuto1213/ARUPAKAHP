@@ -31,9 +31,7 @@ export default async function AdminPage() {
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
               管理者ページ
             </h1>
-            <p className="mt-5 text-base leading-7 text-slate-600 md:text-lg">
-              ユーザーネームとパスワードで認証した管理者だけが、お問い合わせ一覧を確認できるページです。
-            </p>
+            
 
             {!isConfigured ? (
               <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-900">
@@ -58,17 +56,8 @@ export default async function AdminPage() {
     <section className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.25),_transparent_35%),linear-gradient(180deg,_#f8fafc_0%,_#eef6ff_45%,_#f8fafc_100%)] px-6 py-12 text-slate-900 md:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="overflow-hidden rounded-[32px] border border-sky-100 bg-white/85 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur md:p-12">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            {/* <div>
-              <p className="mb-3 inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-sm font-medium text-sky-700">
-                Admin Console
-              </p>
-              
-            </div> */}
-
-            <div>
-              <AdminLogoutButton />
-            </div>
+          <div className="mb-10 flex justify-end">
+            <AdminLogoutButton />
           </div>
 
           <div>
