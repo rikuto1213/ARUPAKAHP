@@ -85,6 +85,13 @@ export default function Navigation() {
                 企業の方へ
               </Link>
 
+              <Link
+                href="/admin"
+                className="whitespace-nowrap text-xs font-medium text-slate-900 hover:text-indigo-500 sm:text-sm"
+              >
+                管理者
+              </Link>
+
             </div>
 
             {/* ハンバーガー */}
@@ -154,6 +161,10 @@ export default function Navigation() {
 
               <Link href="/corporate" onClick={closeMenu} className="text-sm font-medium text-slate-900 hover:text-indigo-500">
                 企業の方へ
+              </Link>
+
+              <Link href="/admin" onClick={closeMenu} className="text-sm font-medium text-slate-900 hover:text-indigo-500">
+                管理者
               </Link>
 
             </nav>

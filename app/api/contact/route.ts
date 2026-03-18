@@ -1,16 +1,7 @@
-import { PrismaClient } from "@prisma/client"
 import { NextResponse } from "next/server"
 import { z } from "zod"
 
-const globalForPrisma = globalThis as unknown as {
-    prisma?: PrismaClient
-}
-
-const prisma = globalForPrisma.prisma ?? new PrismaClient()
-
-if (process.env.NODE_ENV !== "production") {
-    globalForPrisma.prisma = prisma
-}
+import { prisma } from "@/lib/prisma"
 
 const formSchema = z.object({
     name: z.string().min(2),
