@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { cookies } from "next/headers"
 
 import AdminLoginForm from "@/components/admin-login-form"
@@ -7,33 +6,6 @@ import { ADMIN_SESSION_COOKIE, isAdminAuthConfigured, isValidAdminSession } from
 import { prisma } from "@/lib/prisma"
 
 export const dynamic = "force-dynamic"
-
-const quickLinks = [
-  {
-    title: "ホームへ戻る",
-    description: "公開サイトの見え方をそのまま確認できます。",
-    href: "/",
-    label: "トップページへ",
-  },
-  {
-    title: "メンバー募集ページ",
-    description: "入部希望者向け情報の更新確認に使えます。",
-    href: "/join",
-    label: "募集ページへ",
-  },
-  {
-    title: "企業向けページ",
-    description: "協賛や制作相談向けの案内内容を確認できます。",
-    href: "/corporate",
-    label: "企業向けページへ",
-  },
-]
-
-const notices = [
-  "問い合わせデータは Neon PostgreSQL から最新順で表示しています。",
-  "本番では Vercel 側にも ADMIN_USERNAME / ADMIN_PASSWORD / ADMIN_SESSION_SECRET の設定が必要です。",
-  "運用タスクが増える場合は、このページ配下に管理画面用ルートを追加してください。",
-]
 
 function formatDate(value: Date) {
   return new Intl.DateTimeFormat("ja-JP", {
@@ -102,7 +74,7 @@ export default async function AdminPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-7">
               <div className="mb-6 flex items-center justify-between gap-4">
                 <div>
@@ -150,31 +122,6 @@ export default async function AdminPage() {
                   ))}
                 </div>
               )}
-            </div>
-
-            <div>
-              <div className="grid gap-5">
-                {quickLinks.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
-                  >
-                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-sky-600">
-                      Quick Link
-                    </p>
-                    <h2 className="mt-4 text-xl font-semibold text-slate-900">
-                      {item.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
-                      {item.description}
-                    </p>
-                    <p className="mt-6 text-sm font-semibold text-slate-900 transition group-hover:text-sky-700">
-                      {item.label}
-                    </p>
-                  </Link>
-                ))}
-              </div>
             </div>
           </div>
         </div>
