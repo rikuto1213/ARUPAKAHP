@@ -37,8 +37,7 @@ export default async function AdminPage() {
 
             {!isConfigured ? (
               <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-900">
-                ADMIN_USERNAME、ADMIN_PASSWORD、ADMIN_SESSION_SECRET が未設定です。
-                .env と本番環境の両方に設定してください。
+                
               </div>
             ) : null}
           </div>
@@ -60,14 +59,12 @@ export default async function AdminPage() {
       <div className="mx-auto max-w-6xl">
         <div className="overflow-hidden rounded-[32px] border border-sky-100 bg-white/85 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur md:p-12">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
+            {/* <div>
               <p className="mb-3 inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-sm font-medium text-sky-700">
                 Admin Console
               </p>
-              <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-                管理者ページ
-              </h1>
-            </div>
+              
+            </div> */}
 
             <div>
               <AdminLogoutButton />
