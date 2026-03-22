@@ -34,7 +34,7 @@ export default function Navigation() {
               
               <span
   className="text-lg"
-  style={{ fontFamily: "hanakaze" }}
+  style={{ fontFamily: "NicoMoji" , fontSize:"27px" ,fontSizeAdjust: "100%"}}
 >
   はしるアルパカ
 </span>
@@ -54,7 +54,7 @@ export default function Navigation() {
                 href="/aboutus"
                 className="whitespace-nowrap text-xs font-medium text-slate-900 hover:text-indigo-500 sm:text-sm"
               >
-                About us
+                About Us
               </a>
 
               <Link
@@ -133,7 +133,6 @@ export default function Navigation() {
                 className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-slate-300 text-slate-700"
                 onClick={closeMenu}
               >
-                ×
               </button>
             </div>
 

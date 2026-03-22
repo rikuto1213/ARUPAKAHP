@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "アプリ開発サークル|はしるアルパカ",
@@ -25,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="font-sans antialiased">
+      <body className="antialiased">
         {/* ヘッダー */}
         <Navigation />
 
