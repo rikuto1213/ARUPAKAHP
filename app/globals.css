@@ -3,6 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'NicoMoji';
+  src: url('/fonts/nicokaku_v2-5.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* Primary Brand Colors */
   --pink-primary: #ec4899;
@@ -160,4 +167,11 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+@font-face {
+  font-family: 'HanakazeTechno'; 
+  src: url('/fonts/HanakazeTechno.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 読み込み中も文字が消えないようにする設定 */
 }

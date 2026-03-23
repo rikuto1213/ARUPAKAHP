@@ -57,13 +57,23 @@ export default function ContactForm() {
             })
 
             if (!response.ok) {
-                throw new Error("Failed to send message")
+                let message = "Failed to send message"
+                try {
+                    const data = await response.json()
+                    if (typeof data?.message === "string") {
+                        message = data.message
+                    }
+                } catch {
+                    // Ignore JSON parse failures and use the fallback message.
+                }
+                throw new Error(message)
             }
 
             toast.success("メッセージを送信しました！")
             form.reset()
         } catch (error) {
-            toast.error("送信に失敗しました。後でもう一度お試しください。")
+            const message = error instanceof Error ? error.message : "送信に失敗しました。後でもう一度お試しください。"
+            toast.error(message)
             console.error(error)
         } finally {
             setIsSubmitting(false)
