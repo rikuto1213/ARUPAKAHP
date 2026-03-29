@@ -1,10 +1,7 @@
 "use client";
-
 import Script from "next/script";
 import { useFadeUp } from "@/hooks/use-fade-up";
-
 const INSTAGRAM_POST_URL = "https://www.instagram.com/p/DVlN6MKj0eB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==";
-
 function toInstagramPermalink(postUrl: string) {
   try {
     const url = new URL(postUrl);
@@ -22,7 +19,6 @@ export default function NewsSection() {
   const { ref: contentRef, isVisible: contentVisible } = useFadeUp();
   const { ref: imageRef, isVisible: imageVisible } = useFadeUp();
   const instagramPermalink = toInstagramPermalink(INSTAGRAM_POST_URL);
-
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="max-w-7xl mx-auto">
@@ -30,7 +26,6 @@ export default function NewsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
           {/* Left side - empty space for layout balance */}
           <div className="hidden lg:block"></div>
-
           {/* Center - News content */}
           <div
             ref={contentRef}
@@ -65,7 +60,6 @@ export default function NewsSection() {
               </p>
             </div>
           </div>
-
           {/* Right side - Instagram embed */}
           <div
             ref={imageRef}
@@ -107,4 +101,5 @@ export default function NewsSection() {
       />
     </section>
   );
+
 }
